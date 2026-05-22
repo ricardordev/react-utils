@@ -81,6 +81,12 @@ npm install # or yarn, pnpm, bun
 npm run dev
 ```
 
+## Deployment & Verification
+
+You can interact with the result on:
+
+* Localhost: [http://localhost:5173/](http://localhost:5173/)
+
 ```
 ricardo albrecht - ricardoalbrecht1@gmail.com
 ```
