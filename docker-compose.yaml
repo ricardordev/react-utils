@@ -4,3 +4,5 @@ services:
     image: react-utils:latest
     ports:
       - "80:80"
+    environment:
+      - API_URL=http://localhost:3000/api
