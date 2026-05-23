@@ -93,9 +93,20 @@ npm run dev
 
 ## Deployment & Verification
 
+For local deployment, use docker:
+
+```bash
+# build the image
+docker compose build --no-cache
+
+# run the container
+docker compose up -d
+```
+
 You can interact with the result on:
 
-* Localhost: [http://localhost:5173/](http://localhost:5173/)
+* Deployed: [http://localhost:80/](http://localhost:80/)
+* Dev: [http://localhost:5173/](http://localhost:5173/)
 
 ```
 ricardo albrecht - ricardoalbrecht1@gmail.com

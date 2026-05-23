@@ -16,7 +16,7 @@ export interface SignInData {
 export interface SignUpData {
     login: string;
     name: string;
-    email: string;    
+    email: string;
     password: string;
     confirmPassword: string;
 }
@@ -33,17 +33,17 @@ export interface SignUpResponse {
 
 export const AuthService = {
     signin: async (credentials: SignInData): Promise<User> => {
-        const response = await api.post<SignInResponse>('/auth/login', credentials);
+        const response = await api.post<SignInResponse>('/auth/sign-in', credentials);
         return response.data.user;
     },
-    
+
     signup: async (data: SignUpData): Promise<User> => {
-        const response = await api.post<SignUpResponse>('/auth/signup', data);
+        const response = await api.post<SignUpResponse>('/auth/sign-up', data);
         return response.data.user;
     },
 
     logout: async (): Promise<void> => {
-        await api.post('/auth/logout');
+        await api.post('/auth/sign-out');
     },
 
     getProfile: async (): Promise<User> => {

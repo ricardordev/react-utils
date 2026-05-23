@@ -69,22 +69,22 @@ export function SearchRepo() {
         <span className="bg-sky-950 text-sky-400 size-10 rounded-lg flex items-center justify-center font-black">2.</span>
         Search Submited (GitHub API)
       </h2>
-      
+
       {/* Formulário de Busca */}
       <form onSubmit={handleSubmit(searchReposManual)} className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl shadow-xl flex gap-3">
-          <input
-            type="text"
-            placeholder="Ex: tailwind, typescript, laravel..."
-            className="flex-grow bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-2 text-neutral-100 focus:outline-none focus:border-sky-500 transition-colors"
-            {...register('searchField', { required: 'Type a term to search' })}
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-neutral-700 hover:bg-neutral-600 disabled:bg-neutral-800 text-neutral-100 font-medium px-6 py-2 rounded-lg cursor-pointer transition-colors"
-          >
-            {loading ? 'Searching...' : 'Search'}
-          </button>
+        <input
+          type="text"
+          placeholder="Ex: tailwind, typescript, laravel..."
+          className="flex-grow bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-2 text-neutral-100 focus:outline-none focus:border-sky-500 transition-colors"
+          {...register('searchField', { required: 'Type a term to search' })}
+        />
+        <button
+          type="submit"
+          disabled={loading}
+          className="bg-neutral-700 hover:bg-neutral-600 disabled:bg-neutral-800 text-neutral-100 font-medium px-6 py-2 rounded-lg cursor-pointer transition-colors"
+        >
+          {loading ? 'Searching...' : 'Search'}
+        </button>
       </form>
       {errors.searchField && <span className="text-red-400 text-xs mt-1 block">{errors.searchField.message}</span>}
 
@@ -95,19 +95,19 @@ export function SearchRepo() {
       </h2>
       <div className="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl shadow-xl gap-3">
         <input
-            type="text"
-            placeholder="Ex: tailwind, typescript, laravel..."
-            className="flex-grow w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-2 text-neutral-100 focus:outline-none focus:border-sky-500 transition-colors"
-            {...register('debounceField', { 
-              onChange: (e) => setTerm(value => e.target.value)
-            })}
-          />
-          <div className="px-1 text-[10px] font-mono text-neutral-500">
-            <span>Status: {loading && term === termDebounced ? 'Fetching API...' : 'Idle'}</span>
-            <span className="ml-2">
-              | Stable Value: <span className="text-sky-400">"{termDebounced}"</span>
-            </span>
-          </div>
+          type="text"
+          placeholder="Ex: tailwind, typescript, laravel..."
+          className="flex-grow w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-2 text-neutral-100 focus:outline-none focus:border-sky-500 transition-colors"
+          {...register('debounceField', {
+            onChange: (e) => setTerm(() => e.target.value)
+          })}
+        />
+        <div className="px-1 text-[10px] font-mono text-neutral-500">
+          <span>Status: {loading && term === termDebounced ? 'Fetching API...' : 'Idle'}</span>
+          <span className="ml-2">
+            | Stable Value: <span className="text-sky-400">"{termDebounced}"</span>
+          </span>
+        </div>
       </div>
 
       {/* listing results */}
@@ -143,7 +143,7 @@ export function SearchRepo() {
                 {repo.description || 'No description available.'}
               </p>
             </div>
-            
+
             <div className="mt-2 pt-4 border-t border-neutral-800 text-xs text-neutral-400">
               {repo.language && (
                 <span className="bg-neutral-800 px-3 py-1 rounded-md font-medium text-sky-200">
@@ -152,7 +152,7 @@ export function SearchRepo() {
               )}
               <a href={repo.html_url} target="_blank" rel="noreferrer" className="hover:text-sky-400 transition-colors font-medium ml-2">
                 <span className="bg-neutral-800 px-3 py-1 rounded-md font-medium text-sky-200">
-                View on GitHub →
+                  View on GitHub →
                 </span>
               </a>
             </div>

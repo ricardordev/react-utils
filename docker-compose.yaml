@@ -1,0 +1,6 @@
+services:
+  react-utils:
+    build: .
+    image: react-utils:latest
+    ports:
+      - "80:80"
