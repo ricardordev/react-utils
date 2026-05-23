@@ -29,6 +29,11 @@ A robust contact and registration form engineered with `react-hook-form` for unc
 
 An explicit modal window control showcasing isolated visibility management via the custom `useToggle` hook. It handles portal-like conditional rendering, access constraints for underlying interfaces, and dispatches analytical updates directly to the centralized audit timeline.
 
+### NavigationButtons
+`src/components/NavigationButtons.tsx`
+
+Navigation buttons to the application, used to navigate between the different pages of the application. 
+
 ### SearchRepo
 `src/components/SearchRepo.tsx`
 
