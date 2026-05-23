@@ -105,7 +105,7 @@ docker compose up -d
 
 You can interact with the result on:
 
-* Deployed: [http://localhost/](http://localhost:80/)
+* Deployed: [http://localhost/](http://localhost/)
 * Dev: [http://localhost:5173/](http://localhost:5173/)
 
 ```
