@@ -3,13 +3,10 @@ import { SearchRepo } from './components/SearchRepo';
 import { Audit } from './components/Audit';
 import { Modal } from './components/Modal';
 import { Accordion } from './components/Accordion';
+import { NavigationButtons } from './components/NavigationButtons';
 import { Toaster } from 'sonner';
 
-import { useMediaQuery } from './hooks/useMediaQuery';
-
 export default function App() {
-
-  const isMobile = useMediaQuery('(max-width: 780px)');
 
   return (
     // dark native theme with tailwind v4
@@ -17,10 +14,10 @@ export default function App() {
       <Toaster closeButton richColors theme="dark" />
 
       <main className="max-w-7xl mx-auto space-y-12">
-        
+
         {/* header */}
         <header className="border-b border-neutral-800 pb-6 text-center space-y-2">
-          <h1 className="text-4xl font-extrabold text-neutral-50 tracking-tight">
+          <h1 className="text-2xl font-extrabold text-neutral-50 tracking-tight">
             @ricardordev/react-utils
           </h1>
           <p className="w-full text-neutral-400 text-base mx-auto">
@@ -29,9 +26,7 @@ export default function App() {
         </header>
 
         {/* layout in two columns */}
-        <div className={`grid gap-10 items-start ${
-          isMobile ? 'grid-cols-1' : 'grid-cols-2 lg:grid-cols-[1fr,2fr]'
-        }`}>
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
           {/* column 1: contact form */}
           <FormContact />
 
@@ -40,19 +35,25 @@ export default function App() {
         </div>
 
         {/* layout in one columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10 items-start">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-1">
           {/* modal component */}
           <Modal />
         </div>
 
         {/* layout in one columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10 items-start">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-1">
           {/* accordion component */}
           <Accordion />
         </div>
 
         {/* layout in one columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-10 items-start">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-1">
+          {/* authentication components */}
+          <NavigationButtons />
+        </div>
+
+        {/* layout in one columns */}
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-1">
           {/* audit component */}
           <Audit />
         </div>

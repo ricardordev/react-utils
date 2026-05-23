@@ -67,6 +67,11 @@ A highly optimized state machine modifier designed for binary operations (flags,
 
 A centralized state management store built with `Zustand` that acts as the application's real-time audit pipeline. It exposes a reactive hook interface allowing any decoupled component to dispatch telemetry, validation logs, or event histories. The store ensures strict state immutability, leverages the browser's native `crypto.randomUUID()` API for high-performance unique identification, and maintains an un-shifted chronological event timeline.
 
+### useAuthStore
+`src/store/useAuthStore.ts`
+
+A centralized state management store built with `Zustand` that acts as the application's authentication pipeline. It exposes a reactive hook interface allowing any decoupled component to dispatch authentication events. The store ensures strict state immutability and maintains an chronological authentication timeline. It depends on an existing API with user authentication and registration endpoints.
+
 ---
 
 ## Getting Started

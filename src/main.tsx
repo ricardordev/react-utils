@@ -1,10 +1,15 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
+import { useAuthStore } from './store/useAuthStore';
 import './index.css'
-import App from './App.tsx'
+
+// fetch user on app load to check session
+useAuthStore.getState().fetchUser();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 )

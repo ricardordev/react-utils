@@ -40,7 +40,7 @@ export function FormContact() {
       </h2>
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        {/* Nome */}
+        {/* Name */}
         <div>
           <label className="block text-sm font-medium text-neutral-400 mb-1">Name</label>
           <input
@@ -66,7 +66,7 @@ export function FormContact() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          {/* Data de Aniversário */}
+          {/* Birthday */}
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-1">Birthday</label>
             <input
@@ -77,14 +77,14 @@ export function FormContact() {
             {errors.birthday && <span className="text-red-400 text-xs mt-1 block">{errors.birthday.message}</span>}
           </div>
 
-          {/* Gênero (Select) */}
+          {/* Gender (Select) */}
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-1">Gender</label>
             <select
               className={`w-full bg-neutral-950 border ${errors.gender ? 'border-red-500' : 'border-neutral-700'} rounded-lg px-4 py-2.5 text-neutral-100 focus:outline-none focus:border-sky-500 transition-colors`}
               {...register('gender', { required: 'Select a gender' })}
             >
-              <option value="">Selecione...</option>
+              <option value="">Select...</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>
@@ -94,7 +94,7 @@ export function FormContact() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          {/* Senha */}
+          {/* Password */}
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-1">Password</label>
             <input
@@ -108,7 +108,7 @@ export function FormContact() {
             {errors.password && <span className="text-red-400 text-xs mt-1 block">{errors.password.message}</span>}
           </div>
 
-          {/* Confirmar Senha */}
+          {/* Confirm Password */}
           <div>
             <label className="block text-sm font-medium text-neutral-400 mb-1">Confirm Password</label>
             <input
