@@ -3,6 +3,6 @@ services:
     build: .
     image: react-utils:latest
     ports:
-      - "80:80"
+      - "${PORT}:80"
     environment:
       - API_URL=${API_URL}

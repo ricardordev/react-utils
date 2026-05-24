@@ -7,6 +7,20 @@ A minimal, production-ready environment showcasing common React architectural pa
 
 ---
 
+## Environment Variables
+
+Create a `.env` file in the root directory and populate it with the following architecture variables:
+
+```env
+# Application Port
+PORT=3020
+
+# API URL
+API_URL=http://localhost:3000/api
+```
+
+---
+
 ## Components
 
 ### Accordion
@@ -105,7 +119,7 @@ docker compose up -d
 
 You can interact with the result on:
 
-* Deployed: [http://localhost/](http://localhost/)
+* Deployed: [http://localhost:3020/](http://localhost:3020/)
 * Dev: [http://localhost:5173/](http://localhost:5173/)
 
 ```
