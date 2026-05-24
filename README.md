@@ -93,7 +93,7 @@ npm run dev
 
 ## Deployment & Verification
 
-For local deployment, use docker:
+For deployment on docker:
 
 ```bash
 # build the image
