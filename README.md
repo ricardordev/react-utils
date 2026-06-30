@@ -182,8 +182,6 @@ Access:
 - Dev: [http://localhost:5173](http://localhost:5173)
 - Deployed: [http://localhost:3020](http://localhost:3020)
 
-```
-
 ---
 
 ricardo albrecht - ricardoalbrecht1@gmail.com
