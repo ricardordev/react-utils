@@ -1,0 +1,8 @@
+services:
+  react-utils:
+    build: .
+    image: react-utils:latest
+    ports:
+      - "${VITE_PORT:-3020}:80"
+    environment:
+      - VITE_API_URL=${VITE_API_URL}
